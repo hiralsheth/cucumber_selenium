@@ -1,0 +1,17 @@
+<users>
+    <user>
+        <id>1</id>
+        <username>testuser1</username>
+        <password>password1</password>
+    </user>
+    <user>
+        <id>2</id>
+        <username>testuser2</username>
+        <password>password2</password>
+    </user>
+    <user>
+        <id>3</id>
+        <username>testuser3</username>
+        <password>password3</password>
+    </user>
+</users>

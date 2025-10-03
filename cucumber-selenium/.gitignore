@@ -1,0 +1,14 @@
+target/
+.idea/
+.vscode/
+.classpath
+.project
+.settings/
+*.iml
+/.mvn/
+/.history/
+.DS_Store
+*.log
+*.tmp
+*.swp
+node_modules/
