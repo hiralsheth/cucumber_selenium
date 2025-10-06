@@ -26,11 +26,17 @@ public class LoginPage {
     }
 
     public void clickSignupLogin() {
-        WebElement link = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath(
-                        "//a[contains(normalize-space(.),'Signup') and contains(normalize-space(.),'Login')]|//a[contains(normalize-space(.),'Signup / Login')]|//a[contains(normalize-space(.),'Signup') or contains(normalize-space(.),'Login')]")));
+        // Intentionally use an incorrect XPath
+      // WebElement link = wait.until(ExpectedConditions.elementToBeClickable(
+//            By.xpath("//a[contains(text(),'ThisWillNotMatchAnything')]")));
+        // Place a breakpoint on the line below to show debugging skills
+
+       //  Correct XPath for actual usage
+       WebElement link = wait.until(ExpectedConditions.elementToBeClickable(
+             By.xpath("//a[contains(text(),'Signup / Login') or contains(text(),'Sign Up / Login')]")));
         link.click();
     }
+    
 
     public void enterEmail(String email) {
         // try common locators
