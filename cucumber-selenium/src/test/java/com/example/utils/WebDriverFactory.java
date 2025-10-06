@@ -2,7 +2,7 @@ package com.example.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chrome.ChromeOptions; 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebDriverFactory {
@@ -13,12 +13,13 @@ public class WebDriverFactory {
         if (driver == null) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-            // optional headless toggle: -Dheadless=true
-            if ("true".equalsIgnoreCase(System.getProperty("headless"))) {
-                options.addArguments("--headless=new");
-            }
+            
+            // Add headless mode options
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--start-maximized");
+            
             driver = new ChromeDriver(options);
         }
         return driver;
@@ -26,7 +27,7 @@ public class WebDriverFactory {
 
     public static void quitDriver() {
         if (driver != null) {
-            try { driver.quit(); } catch (Exception ignored) {}
+            driver.quit();
             driver = null;
         }
     }
